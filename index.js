@@ -1,7 +1,7 @@
 //Variables
 const listButton = document.getElementById("list-button")
 const tab = document.getElementById("tab")
-const form = document.getElementById("form")
+const mealForm = document.getElementById("mealForm")
 const listForm = document.getElementById("listForm")
 
 
@@ -24,7 +24,8 @@ listForm.addEventListener("submit", function(e) {
     newItem.textContent = e.target.item.value
 })
 
-form.addEventListener("submit", function(e) {
+//Render Meals Form
+mealForm.addEventListener("submit", function(e) {
     e.preventDefault();
     fetch("http://localhost:3000/dishes")
     .then(function (res) {
@@ -33,7 +34,10 @@ form.addEventListener("submit", function(e) {
     .then(function (data) {
 
         for (const item of data) {
-            console.log(item)
+            //console.log(item)
+
+            console.log(e.target.cuisine.value)
+            
         }
     })
 })
