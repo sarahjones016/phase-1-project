@@ -38,7 +38,7 @@ function renderPage(dishes) {
     e.preventDefault();
     resetForm();
 
-    dishes.forEach((dish) => {
+    dishes.forEach((dish) => { //function(dish){}
       produceDish(dish, e);
     });
 
