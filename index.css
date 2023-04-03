@@ -1,0 +1,64 @@
+h1 {
+    text-align: center;
+    font-size: 60px;
+}
+form {
+    text-align: center;
+    font-size: 18px;
+}
+body {
+    background-color: #FFF2CC;
+    font-family: "Charter";
+}
+#tab {
+    float: right;
+    border: 1px solid #FFF2CC;
+    background-color: white;
+    width: 22%;
+    height: 4000px;
+    text-align: center;
+}
+.space {
+    margin-top: 200px;
+    margin-bottom: 100px;
+}
+#recipes {
+    text-align: center;
+}
+img {
+    width: 550px;
+    height: 550px;
+}
+#tab #list-button {
+    visibility: hidden;
+}
+@media all and (max-width: 480px) {
+    h1 {
+        text-align: center;
+        font-size: 53px;
+    }
+    #tab {
+        float: none;
+        border: 1px solid #FFF2CC;
+        background-color: white;
+        width: 100%;
+        height: 150px;
+        text-align: center;
+    }
+    img {
+        width: 300px;
+        height: 300px;
+    }
+    #tab #list-button {
+        visibility: visible;
+    
+    }
+    .space {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+    .mobileSpace {
+        margin-top: 100px;
+        margin-bottom: 150px;
+    }
+}

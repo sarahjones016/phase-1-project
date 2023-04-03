@@ -4,12 +4,70 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I Like Trains</title>
+    <title>Dish Selector</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer type="text/javascript" src="index.js"></script>
 </head>
 <body>
-    <h1 id="header-1">FOOD</h1>
     
+    <section id="form-section">
+    <div id="tab" style="overflow-y:auto">
+        <h2>Your Grocery List</h2>
+        <form id="listForm">
+            <input
+            type="text"
+            name="item"
+            id="item"
+            placeholder="Add an additional item..."
+            />
+          <button class="addButton" type="submit">Add Item</button>
+        </form>
+        <br>
+        <button id="list-button">⌄</button>
+    </div>
+    <div class="mobileSpace"></div>
+    <h1 id="header-1">Meal Selector</h1>
+    <form id="form">
+        <label>Choose a cuisine:
+            <input list="cuisine" /></label>
+            <datalist id="cuisine">
+                <option value="American"></option>
+                <option value="Chinese"></option>
+                <!-- <option value="French"></option> -->
+                <!-- <option value="Greek"></option> -->
+                <option value="Indian"></option>
+                <option value="Italian"></option>
+                <!-- <option value="Korean"></option> -->
+                <option value="Mexican"></option>
+                <!-- <option value="Spanish"></option> -->
+                <option value="Thai"></option>
+                <!-- <option value="Vietnamese"></option> -->
+            </datalist>
+        <!-- <br>
+        <br>
+        <label>Choose your desired cook time:
+            <input list="cook-time" /></label>
+            <datalist id="cook-time">
+                <option value="30 mins or less"></option>
+                <option value="30 mins - 1 hour"></option>
+                <option value="1 - 2 hours"></option>
+                <option value="2+ hours"></option>
+            </datalist>
+        <br> -->
+        <br>
+        <br>
+        <button>Find Meals</button>
+    </form>
+    </section>
+    <div class="mobileSpace"></div>
+    
+    <div class="space"></div>
+
+    <section id="recipes">
+    <h1 id="header-2">Meals</h1>
+<!-- This is where meal images go -->
+    </section>
+
 </body>
-<link defer rel="stylesheet" href="style.css">
-<script defer src="index.js"></script>
+
 </html>
