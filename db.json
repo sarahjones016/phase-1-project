@@ -4,7 +4,7 @@
         "id" : 1,
         "name" : "Spaghetti and Meatballs",
         "image" : "https://lifeloveandgoodfood.com/wp-content/uploads/2022/07/Spaghetti-and-Meatballs-Hero-2-1200x1200-1.jpg",
-        "type" : "italian",
+        "type" : "Italian",
         "time" : 90,
         "ingredients" : [
           "Extra-virgin olive oil",
@@ -36,7 +36,7 @@
           "id" : 2,
           "name" : "Margherita Pizza",
           "image" : "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2Farchive%2Fb36036a54e1cf9c084f4b702a63e5a08f1e98983",
-          "type" : "italian",
+          "type" : "Italian",
           "time(min)" : 75,
           "ingredients" : [
             "1 12-inch round of pizza dough, stretched",
