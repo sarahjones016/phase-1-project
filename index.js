@@ -32,7 +32,6 @@ listForm.addEventListener("submit", function (e) {
 });
 
 // Render Page
-
 function renderPage(dishes) {
   mealForm.addEventListener("submit", (e) => {
     e.preventDefault();
