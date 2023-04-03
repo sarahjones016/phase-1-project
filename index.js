@@ -1,10 +1,3 @@
-// function changeHeader() {
-//     let h1 = document.querySelector('h1')
-//     h1.textContent = 'no'
-// }
-
-// changeHeader()
-
 //Variables
 const listButton = document.getElementById("list-button");
 const tab = document.getElementById("tab");
@@ -38,28 +31,33 @@ listForm.addEventListener("submit", function (e) {
   listForm.reset();
 });
 
-// Render Page Info
+// Render Page
 
 function renderPage(dishes) {
-  mealForm.addEventListener("submit", function (e) {
+  mealForm.addEventListener("submit", (e) => {
     e.preventDefault();
     resetForm();
 
-    dishes.forEach(function (dish) {
-      if (dish.type === e.target.cuisine.value) {
-        let dishName = document.createElement("h2");
-        dishName.textContent = dish.name;
-        let img = document.createElement("img");
-        img.src = dish.image;
-
-        mealList.append(dishName, img);
-      }
+    dishes.forEach((dish) => {
+      produceDish(dish, e);
     });
+
     mealForm.reset();
   });
 }
 
+//Subfunction - resets inner divs/removes pictures and text
 function resetForm() {
   mealList.innerHTML = " ";
 }
-//! On page render
+//Subfunction - creates list of dishes
+function produceDish(dish, e) {
+  if (dish.type === e.target.cuisine.value) {
+    let dishName = document.createElement("h2");
+    dishName.textContent = dish.name;
+    let img = document.createElement("img");
+    img.src = dish.image;
+
+    mealList.append(dishName, img);
+  }
+}
