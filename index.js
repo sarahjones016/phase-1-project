@@ -35,13 +35,23 @@ listForm.addEventListener("submit", function(e) {
 form.addEventListener("submit", function(e) {
     e.preventDefault();
     fetch("http://localhost:3000/dishes")
-    .then(function (res) {
+    .then((res) => {
         return res.json();
     })
-    .then(function (data) {
-
-        for (const item of data) {
-            console.log(item)
-        }
-    })
+    .then((data) => renderPage(data))
 })
+
+function renderPage(dishes){
+    // dishes.forEach(function(dish) {
+    //     console.log(dish)
+    // })
+
+    dishes.forEach((dish) => {
+        console.log(dish)
+
+    })
+
+    // for (const dish of dishes) {
+    //      console.logo(dish)
+    // }
+}

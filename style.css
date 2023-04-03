@@ -32,6 +32,8 @@ img {
 #tab #list-button {
     visibility: hidden;
 }
+
+
 @media all and (max-width: 480px) {
     h1 {
         text-align: center;
