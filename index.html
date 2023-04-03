@@ -11,8 +11,18 @@
 <body>
     
     <section id="form-section">
-    <div id="tab">
+    <div id="tab" style="overflow-y:auto">
         <h2>Your Grocery List</h2>
+        <form id="listForm">
+            <input
+            type="text"
+            name="item"
+            id="item"
+            placeholder="Add an additional item..."
+            />
+          <button class="addButton" type="submit">Add Item</button>
+        </form>
+        <br>
         <button id="list-button">⌄</button>
     </div>
     <div class="mobileSpace"></div>
@@ -23,17 +33,17 @@
             <datalist id="cuisine">
                 <option value="American"></option>
                 <option value="Chinese"></option>
-                <option value="French"></option>
-                <option value="Greek"></option>
+                <!-- <option value="French"></option> -->
+                <!-- <option value="Greek"></option> -->
                 <option value="Indian"></option>
                 <option value="Italian"></option>
-                <option value="Korean"></option>
+                <!-- <option value="Korean"></option> -->
                 <option value="Mexican"></option>
-                <option value="Spanish"></option>
+                <!-- <option value="Spanish"></option> -->
                 <option value="Thai"></option>
-                <option value="Vietnamese"></option>
+                <!-- <option value="Vietnamese"></option> -->
             </datalist>
-        <br>
+        <!-- <br>
         <br>
         <label>Choose your desired cook time:
             <input list="cook-time" /></label>
@@ -43,10 +53,10 @@
                 <option value="1 - 2 hours"></option>
                 <option value="2+ hours"></option>
             </datalist>
+        <br> -->
         <br>
         <br>
-        <br>
-        <button>Find Recipes</button>
+        <button>Find Meals</button>
     </form>
     </section>
     <div class="mobileSpace"></div>
@@ -54,25 +64,25 @@
     <div class="space"></div>
 
     <section id="recipes">
-    <h1 id="header-2">Recipes</h1>
+    <h1 id="header-2">Meals</h1>
     <div id="card">
-        <h3>Insert Recipe Name Here</h3>
+        <h3>Insert Meal Name Here</h3>
         <img src="https://www.howtocook.recipes/wp-content/uploads/2021/05/Ratatouille-recipe-500x500.jpg" />
     </div>
     <div id="card">
-        <h3>Insert Recipe Name Here</h3>
+        <h3>Insert Meal Name Here</h3>
         <img src="https://hips.hearstapps.com/hmg-prod/images/easy-dinner-recipes-1676057761.jpeg" />
     </div>
     <div id="card">
-        <h3>Insert Recipe Name Here</h3>
+        <h3>Insert Meal Name Here</h3>
         <img src="https://assets.epicurious.com/photos/5a3002b504847a34b821cb4a/1:1/w_2560%2Cc_limit/seared-scallops-with-brown-butter-and-lemon-pan-sauce-recipe-BA-121217.jpg" />
     </div>
     <div id="card">
-        <h3>Insert Recipe Name Here</h3>
+        <h3>Insert Meal Name Here</h3>
         <img src="https://images.immediate.co.uk/production/volatile/sites/30/2022/10/Spicy-chicken-and-chickpea-curry-40f3492.jpg" />
     </div>
     <div id="card">
-        <h3>Insert Recipe Name Here</h3>
+        <h3>Insert Meal Name Here</h3>
         <img src="https://images.immediate.co.uk/production/volatile/sites/2/2019/04/Dum-Aloo-e163632.jpg?quality=90&resize=556,505" />
     </div>
     </section>
