@@ -24,3 +24,18 @@ listForm.addEventListener("submit", function(e) {
     newItem.textContent = e.target.item.value
 })
 
+//Meal Selector Form
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    fetch("http://localhost:3000/dishes")
+    .then(function (res) {
+        return res.json();
+    })
+    .then(function (data) {
+
+        for (const item of data) {
+            console.log(item)
+        }
+    })
+})
+
