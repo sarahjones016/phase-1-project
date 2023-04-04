@@ -55,6 +55,7 @@ function resetForm() {
 function produceDish(dish, e) {
   if (dish.type === e.target.cuisine.value) {
 
+    
     let dishName = document.createElement("h2");
     dishName.textContent = dish.name;
     let img = document.createElement("img");
@@ -63,32 +64,49 @@ function produceDish(dish, e) {
     let divider = document.createElement("div");
     divider.id = "divider";
 
+    
+
     divider.addEventListener(('mouseenter'),() => {
       // console.log('enter')
       img.hidden = true
-      let time = document.createElement('h5')
+      let time = document.createElement('h4')
       time.className = 'cardback'
-      time.textContent = dish.time
+      time.textContent = "Cook Time (in mins): " + dish.time
 
-      let servingSize = document.createElement('h5')
+      let servingSize = document.createElement('h4')
       servingSize.className = 'cardback'
-      servingSize.textContent = dish.servings
+      servingSize.textContent = "Servings: " + dish.servings
 
+      let ingredientsTitle = document.createElement("p")
+      ingredientsTitle.textContent = "Ingredients:"
       let ingredients = document.createElement('ul')
+      ingredientsTitle.append(ingredients)
       ingredients.className = 'cardback'
-      // for ()
+
+      for (let ingredient of dish.ingredients) {
+        console.log(ingredient)
+
+        let ingredientList = document.createElement("li")
+        ingredientList.textContent = ingredient
+        ingredients.append(ingredientList)
+        let addToListButton = document.createElement("button")
+        addToListButton.textContent = "+"
+        ingredientList.append(addToListButton)
+      }
 
       divider.addEventListener(('mouseleave'), () => {
         // console.log('leave')
         img.hidden = false
         ingredients.hidden = true
-        servings.hidden = true
+        servingSize.hidden = true
         time.hidden = true
+        ingredientsTitle.hidden = true
       })
-      divider.append(time,servings,ingredients)
+      divider.append(time,servingSize,ingredientsTitle)
     })
 
+    let thisIsABreak = document.createElement('br')
     divider.append(dishName, img);
-    mealList.append(divider);
+    mealList.append(divider, thisIsABreak);
   }
 }
