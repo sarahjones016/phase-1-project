@@ -61,6 +61,8 @@ function produceDish(dish, e) {
     dishName.textContent = dish.name;
     let img = document.createElement("img");
     img.src = dish.image;
+    let dishLikes = document.createElement("h4")
+    dishLikes.textContent = dish.likes
 
     let divider = document.createElement("div");
     divider.id = "divider";
@@ -119,7 +121,23 @@ function produceDish(dish, e) {
 
     let thisIsABreak = document.createElement('div')
     thisIsABreak.className = "space"
+
+    let likesText = document.createElement('p')
+    likesText.textContent =  `${dish.likes} likes`
+    let count = 0
+
+    let likes = document.createElement('button')
+    likes.textContent = '🤢'
+    likes.addEventListener(('click'), () => {
+      count++
+    })
+    dish.likes = count + dish.likes
+    likesText.textContent = `${dish.likes} likes`
+
     divider.append(dishName, img);
-    mealList.append(divider, thisIsABreak);
+    mealList.append(divider, likesText, likes, thisIsABreak);
+
+
+
   }
 }
