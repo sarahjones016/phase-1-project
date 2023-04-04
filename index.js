@@ -26,18 +26,20 @@ listButton.addEventListener("click", function () {
 listForm.addEventListener("submit", function (e) {
   e.preventDefault();
   const newItem = document.createElement("li");
-  listForm.append(newItem);
   newItem.textContent = e.target.item.value;
+  listForm.append(newItem);
   listForm.reset();
 });
 
 // Render Page
+
 function renderPage(dishes) {
   mealForm.addEventListener("submit", (e) => {
     e.preventDefault();
     resetForm();
 
     dishes.forEach((dish) => {
+      //function(dish){}
       produceDish(dish, e);
     });
 
@@ -49,15 +51,93 @@ function renderPage(dishes) {
 function resetForm() {
   mealList.innerHTML = " ";
 }
-//Subfunction - creates list of dishes
+
+//Mainfunction - creates list of dishes
 function produceDish(dish, e) {
   if (dish.type === e.target.cuisine.value) {
+
+    
     let dishName = document.createElement("h2");
     dishName.textContent = dish.name;
     let img = document.createElement("img");
     img.src = dish.image;
+    let dishLikes = document.createElement("h4")
+    dishLikes.textContent = dish.likes
 
-    mealList.append(dishName, img);
+    let divider = document.createElement("div");
+    divider.id = "divider";
+
+    
+
+    divider.addEventListener(('mouseenter'),() => {
+      // console.log('enter')
+      img.hidden = true
+      divider.style = "overflow-y:auto"
+      let time = document.createElement('h4')
+      time.className = 'cardback'
+      time.textContent = "Cook Time (in mins): " + dish.time
+
+      let servingSize = document.createElement('h4')
+      servingSize.className = 'cardback'
+      servingSize.textContent = "Servings: " + dish.servings
+
+      let ingredientsTitle = document.createElement("p")
+      ingredientsTitle.textContent = "Ingredients:"
+      let ingredients = document.createElement('ul')
+      ingredientsTitle.append(ingredients)
+      ingredients.className = 'cardback'
+
+      for (let ingredient of dish.ingredients) {
+        // console.log(ingredient)
+
+        let ingredientList = document.createElement("li")
+        ingredientList.textContent = ingredient
+        ingredients.append(ingredientList)
+
+        let addToListButton = document.createElement("button")
+        addToListButton.textContent = "+"
+
+        addToListButton.addEventListener('click', () => {
+          let newItem = document.createElement("li");
+          newItem.textContent = ingredient;
+          listForm.append(newItem);
+          // console.log('click')
+        })
+        
+        ingredientList.append(addToListButton)
+      }
+      
+      divider.addEventListener(('mouseleave'), () => {
+        // console.log('leave')
+        divider.style = ' '
+        img.hidden = false
+        ingredients.hidden = true
+        servingSize.hidden = true
+        time.hidden = true
+        ingredientsTitle.hidden = true
+      })
+      divider.append(time,servingSize,ingredientsTitle)
+    })
+
+    let thisIsABreak = document.createElement('div')
+    thisIsABreak.className = "space"
+
+    let likesText = document.createElement('p')
+    likesText.textContent =  `${dish.likes} likes`
+    let count = 0
+
+    let likes = document.createElement('button')
+    likes.textContent = '🤢'
+    likes.addEventListener(('click'), () => {
+      count++
+    })
+    dish.likes = count + dish.likes
+    likesText.textContent = `${dish.likes} likes`
+
+    divider.append(dishName, img);
+    mealList.append(divider, likesText, likes, thisIsABreak);
+
+
+
   }
 }
-
