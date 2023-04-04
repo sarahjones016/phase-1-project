@@ -2,7 +2,7 @@ h1 {
     text-align: center;
     font-size: 60px;
 }
-form {
+#mealForm {
     text-align: center;
     font-size: 18px;
 }
@@ -32,6 +32,8 @@ img {
 #tab #list-button {
     visibility: hidden;
 }
+
+
 @media all and (max-width: 480px) {
     h1 {
         text-align: center;
