@@ -117,7 +117,8 @@ function produceDish(dish, e) {
       divider.append(time,servingSize,ingredientsTitle)
     })
 
-    let thisIsABreak = document.createElement('br')
+    let thisIsABreak = document.createElement('div')
+    thisIsABreak.className = "space"
     divider.append(dishName, img);
     mealList.append(divider, thisIsABreak);
   }
