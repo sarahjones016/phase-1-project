@@ -38,7 +38,8 @@ function renderPage(dishes) {
     e.preventDefault();
     resetForm();
 
-    dishes.forEach((dish) => { //function(dish){}
+    dishes.forEach((dish) => {
+      //function(dish){}
       produceDish(dish, e);
     });
 
@@ -53,15 +54,41 @@ function resetForm() {
 //Subfunction - creates list of dishes
 function produceDish(dish, e) {
   if (dish.type === e.target.cuisine.value) {
+
     let dishName = document.createElement("h2");
     dishName.textContent = dish.name;
     let img = document.createElement("img");
     img.src = dish.image;
-    img.addEventListener(('mouseover'),() => {
-        console.log('food')
-        // img.src = dish[0].image
+
+    let divider = document.createElement("div");
+    divider.id = "divider";
+
+    divider.addEventListener(('mouseenter'),() => {
+      // console.log('enter')
+      img.hidden = true
+      let time = document.createElement('h5')
+      time.className = 'cardback'
+      time.textContent = dish.time
+
+      let servingSize = document.createElement('h5')
+      servingSize.className = 'cardback'
+      servingSize.textContent = dish.servings
+
+      let ingredients = document.createElement('ul')
+      ingredients.className = 'cardback'
+      for ()
+
+      divider.addEventListener(('mouseleave'), () => {
+        // console.log('leave')
+        img.hidden = false
+        ingredients.hidden = true
+        servings.hidden = true
+        time.hidden = true
+      })
+      divider.append(time,servings,ingredients)
     })
 
-    mealList.append(dishName, img);
+    divider.append(dishName, img);
+    mealList.append(divider);
   }
 }

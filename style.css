@@ -26,11 +26,26 @@ body {
     text-align: center;
 }
 img {
+    border:solid;
     width: 550px;
     height: 550px;
 }
 #tab #list-button {
     visibility: hidden;
+}
+#divider {
+    display:inline-block;
+    text-align: center;
+   width: 550px;
+   text-align: center;
+   background-color: white;
+   border: solid;
+   /* height: 800px; */
+}
+.cardback {
+    width: 550px;
+    text-align: center;
+    margin: auto;
 }
 
 
