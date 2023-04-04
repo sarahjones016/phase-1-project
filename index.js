@@ -62,13 +62,12 @@ function produceDish(dish, e) {
     let img = document.createElement("img");
     img.src = dish.image;
     let dishLikes = document.createElement("h4")
-    dishLikes.textContent = dish.likes
+    dishLikes.textContent = dish.likes + " Likes";
 
     let divider = document.createElement("div");
     divider.id = "divider";
 
     
-
     divider.addEventListener(('mouseenter'),() => {
       // console.log('enter')
       img.hidden = true
@@ -122,20 +121,8 @@ function produceDish(dish, e) {
     let thisIsABreak = document.createElement('div')
     thisIsABreak.className = "space"
 
-    let likesText = document.createElement('p')
-    likesText.textContent =  `${dish.likes} likes`
-    let count = 0
-
-    let likes = document.createElement('button')
-    likes.textContent = '🤢'
-    likes.addEventListener(('click'), () => {
-      count++
-    })
-    dish.likes = count + dish.likes
-    likesText.textContent = `${dish.likes} likes`
-
     divider.append(dishName, img);
-    mealList.append(divider, likesText, likes, thisIsABreak);
+    mealList.append(divider, thisIsABreak);
 
 
 
