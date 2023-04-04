@@ -6,6 +6,8 @@
       "image" : "https://lifeloveandgoodfood.com/wp-content/uploads/2022/07/Spaghetti-and-Meatballs-Hero-2-1200x1200-1.jpg",
       "type" : "Italian",
       "time" : 90,
+      "likes" : 0,
+      "comments" : [],
       "ingredients" : [
         "Extra-virgin olive oil",
         "1 onion, chopped",
@@ -38,6 +40,8 @@
         "image" : "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2Farchive%2Fb36036a54e1cf9c084f4b702a63e5a08f1e98983",
         "type" : "Italian",
         "time" : 75,
+        "likes" : 0,
+        "comments" : [],
         "ingredients" : [
           "1 12-inch round of pizza dough, stretched",
           "3 tablespoons tomato sauce",
@@ -54,6 +58,8 @@
         "image" : "https://www.lemontreedwelling.com/wp-content/uploads/2021/02/chimichangas-featured.jpg",
         "type" : "Mexican",
         "time" : 60,
+        "likes" : 0,
+        "comments" : [],
         "ingredients" : [
           "2 tablespoons unsalted butter",
           "4 tablespoons vegetable oil",
@@ -83,6 +89,8 @@
       "image" : "http://clv.h-cdn.co/assets/16/52/1600x1600/square-1482871315-clx010117winnerdinners-04.jpg",
       "type" : "Mexican",
       "time" : 65,
+      "likes" : 0,
+      "comments" : [],
       "ingredients" : [
           "Fourteen 5 1/2-inch thin yellow corn tortillas",
           "Nonstick cooking spray",
@@ -110,6 +118,8 @@
       "image" : "https://www.recipetineats.com/wp-content/uploads/2020/01/Chicken-Pad-Thai_9-SQ.jpg",
       "type" : "Thai",
       "time" : 765,
+      "likes" : 0,
+      "comments" : [],
       "ingredients" : [
         "1-ounce tamarind paste",
         "3/4 cup boiling water",
@@ -138,6 +148,8 @@
       "image" : "https://i0.wp.com/www.letscooksomefood.com/wp-content/uploads/2020/09/119068517_992266274533071_5519282505976939196_o.jpg?fit=1890%2C1694&ssl=1",
       "type" : "Thai",
       "time" : 35,
+      "likes" : 0,
+      "comments" : [],
       "ingredients" : [
         "1 cup sticky rice (sweet glutenous rice)",
         "2/3 cup water",
@@ -160,6 +172,8 @@
       "image" : "https://cdn.apartmenttherapy.info/image/upload/f_jpg,q_auto:eco,c_fill,g_auto,w_1500,ar_1:1/k%2FPhoto%2FRecipes%2F2021-09-texas-chili%2F2021-08-31_ATK-6259",
       "type" : "American",
       "time" : 180,
+      "likes" : 0,
+      "comments" : [],
       "ingredients" : [
           "2 ounces dried chiles, such as guajillo, arbol, ancho, japones or a combination (8 to 10 chiles)",
           "1 1/2 teaspoons ground cumin",
@@ -187,6 +201,8 @@
       "image" : "https://images.immediate.co.uk/production/volatile/sites/30/2013/05/Cheeseburger-3d7c922.jpg?quality=90&resize=556,505",
       "type" : "American",
       "time" : 20,
+      "likes" : 0,
+      "comments" : [],
       "ingredients" : [
           "1 1/2 pounds ground chuck (80 percent lean) or ground turkey (90 percent lean)",
           "Kosher salt and freshly ground black pepper",
@@ -203,6 +219,8 @@
       "image" : "https://christieathome.com/wp-content/uploads/2020/04/Pork-Chive-Dumplings-updated-1-b.jpg",
       "type" : "Chinese",
       "time" : 40,
+      "likes" : 0,
+      "comments" : [],
       "ingredients" : [
           "1 large egg, beaten",
           "1 1/4 pounds fatty ground pork",
@@ -230,6 +248,8 @@
       "image" : "https://omnivorescookbook.com/wp-content/uploads/2019/11/1911_Easy-Milk-Bread-Rolls_550.jpg",
       "type" : "Chinese",
       "time" : 220,
+      "likes" : 0,
+      "comments" : [],
       "ingredients" : [
           "2 cups (240 g) plus 2 tablespoons (18 g) bread flour, plus more for dusting",
           "1/2 cup (114 g) plus 1 tablespoon cold whole milk",
@@ -251,6 +271,8 @@
       "image" : "https://www.manjulaskitchen.com/wp-content/uploads/punjabi_aloo_paratha-500x500.jpg",
       "type" : "Indian",
       "time" : 80,
+      "likes" : 0,
+      "comments" : [],
       "ingredients" : [
           "2 large russet potatoes (about 1 1/4 pounds)",
           "Kosher salt",
@@ -269,6 +291,8 @@
       "image" : "https://healthyrecipesblogs.com/wp-content/uploads/2013/02/tandoori-chicken-featured-2021.jpg",
       "type" : "Indian",
       "time" : 125,
+      "likes" : 0,
+      "comments" : [],
       "ingredients" : [
           "5 cloves",
           "2 dried guajillo chiles (if you can't find these, then use 2 chiles de arbol, and more paprika for color)",

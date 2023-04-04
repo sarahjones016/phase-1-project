@@ -26,8 +26,8 @@ listButton.addEventListener("click", function () {
 listForm.addEventListener("submit", function (e) {
   e.preventDefault();
   const newItem = document.createElement("li");
-  listForm.append(newItem);
   newItem.textContent = e.target.item.value;
+  listForm.append(newItem);
   listForm.reset();
 });
 
@@ -51,7 +51,8 @@ function renderPage(dishes) {
 function resetForm() {
   mealList.innerHTML = " ";
 }
-//Subfunction - creates list of dishes
+
+//Mainfunction - creates list of dishes
 function produceDish(dish, e) {
   if (dish.type === e.target.cuisine.value) {
 
@@ -69,6 +70,7 @@ function produceDish(dish, e) {
     divider.addEventListener(('mouseenter'),() => {
       // console.log('enter')
       img.hidden = true
+      divider.style = "overflow-y:auto"
       let time = document.createElement('h4')
       time.className = 'cardback'
       time.textContent = "Cook Time (in mins): " + dish.time
@@ -84,18 +86,28 @@ function produceDish(dish, e) {
       ingredients.className = 'cardback'
 
       for (let ingredient of dish.ingredients) {
-        console.log(ingredient)
+        // console.log(ingredient)
 
         let ingredientList = document.createElement("li")
         ingredientList.textContent = ingredient
         ingredients.append(ingredientList)
+
         let addToListButton = document.createElement("button")
         addToListButton.textContent = "+"
+
+        addToListButton.addEventListener('click', () => {
+          let newItem = document.createElement("li");
+          newItem.textContent = ingredient;
+          listForm.append(newItem);
+          // console.log('click')
+        })
+        
         ingredientList.append(addToListButton)
       }
-
+      
       divider.addEventListener(('mouseleave'), () => {
         // console.log('leave')
+        divider.style = ' '
         img.hidden = false
         ingredients.hidden = true
         servingSize.hidden = true
