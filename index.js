@@ -57,6 +57,10 @@ function produceDish(dish, e) {
     dishName.textContent = dish.name;
     let img = document.createElement("img");
     img.src = dish.image;
+    img.addEventListener(('mouseover'),() => {
+        console.log('food')
+        // img.src = dish[0].image
+    })
 
     mealList.append(dishName, img);
   }
