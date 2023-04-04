@@ -76,7 +76,7 @@ function produceDish(dish, e) {
 
       let ingredients = document.createElement('ul')
       ingredients.className = 'cardback'
-      for ()
+      // for ()
 
       divider.addEventListener(('mouseleave'), () => {
         // console.log('leave')
