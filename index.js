@@ -65,30 +65,54 @@ function produceDish(dish, e) {
     let divider = document.createElement("div");
     divider.id = "divider";
 
+    //Likes
     let dividerSubsection = document.createElement("div")
     dividerSubsection.id="dividerSub"
     let dishLikes = document.createElement("h4")
     dishLikes.textContent = dish.likes + " Likes";
-    dishLikes.id = "dishLikes"
     let dishLikesButton = document.createElement("button")
     dishLikesButton.textContent = "⭐"
-    dishLikesButton.id = "dishLikesButton"
     let dishLikesDiv = document.createElement("div")
     dishLikesDiv.className = "dishLikesDiv"
 
+    dishLikesButton.addEventListener("click", function() {
+      dish.likes += 1
+      dishLikes.textContent =  dish.likes + " Likes";
+    })
+
     dishLikesDiv.append(dishLikes, dishLikesButton)
 
-    let dishComments = document.createElement("h4")
-    dishComments.textContent = dish.comments
+    //Render Comments
+    let commentsDiv = document.createElement("div")
+    commentsDiv.className = "commentsDiv"
+    let listOfComments = document.createElement("ul")
+    let dishComments = dish.comments
+    dishComments.forEach((comment) => createComment(comment))
+
+    function createComment(comment) {
+      let li = document.createElement("li")
+      li.textContent = comment
+      listOfComments.append(li)
+    }
+    commentsDiv.append(listOfComments)
+
+    //Comments Form
     let dishCommentForm = document.createElement("form")
     dishCommentForm.id = "commentForm"
     let dishCommentFormInput = document.createElement("input")
     let dishCommentFormButton = document.createElement("button")
     dishCommentFormButton.textContent = "Comment"
 
-    dishCommentForm.append(dishCommentFormInput, dishCommentFormButton)
+    dishCommentForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+      console.log("submit button clicked")
+    })
 
-    dividerSubsection.append(dishLikesDiv, dishComments, dishCommentForm)
+
+    dishCommentForm.append(dishCommentFormInput, dishCommentFormButton)
+    commentsDiv.append(listOfComments, dishCommentForm)
+
+    dividerSubsection.append(dishLikesDiv, commentsDiv)
     
 
     

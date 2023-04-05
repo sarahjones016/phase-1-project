@@ -173,7 +173,7 @@
       "type" : "American",
       "time" : 180,
       "likes" : 0,
-      "comments" : [],
+      "comments" : ["hi","was here first", "i'm hungry can someone buy me lunch"],
       "ingredients" : [
           "2 ounces dried chiles, such as guajillo, arbol, ancho, japones or a combination (8 to 10 chiles)",
           "1 1/2 teaspoons ground cumin",
