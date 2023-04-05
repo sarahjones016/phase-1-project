@@ -25,12 +25,23 @@ listButton.addEventListener("click", function () {
 //Add To Grocery List Form
 listForm.addEventListener("submit", function (e) {
   e.preventDefault();
-  const newItem = document.createElement("li");
-  newItem.textContent = e.target.item.value;
-  listForm.append(newItem);
+  addToGroceryList(e.target.item.value)
   listForm.reset();
-});
+})
+  // const newItem = document.createElement("li");
+  // newItem.textContent = e.target.item.value;
 
+function addToGroceryList(item){
+  let li = document.createElement("li");
+  li.textContent = item;
+  let deleteButton = document.createElement('button')
+  deleteButton.textContent = '❌'
+  deleteButton.addEventListener('click', (e) => {
+    li.remove()
+  })
+  li.append(deleteButton)
+  listForm.append(li);
+}
 // Render Page
 
 function renderPage(dishes) {
@@ -61,12 +72,11 @@ function produceDish(dish, e) {
     dishName.textContent = dish.name;
     let img = document.createElement("img");
     img.src = dish.image;
-    //----------------------------------------------------------------
-
 //----------------------------------------------------------
     let divider = document.createElement("div");
     divider.id = "divider";
 
+    divider.append(dishName, img); //dishLikes moves to top after image dissapears
 //--------------------------------------------------------------
     
     divider.addEventListener(('mouseenter'),() => {
@@ -99,9 +109,8 @@ function produceDish(dish, e) {
         addToListButton.textContent = "+"
 
         addToListButton.addEventListener('click', () => {
-          let newItem = document.createElement("li");
-          newItem.textContent = ingredient;
-          listForm.append(newItem);
+
+          addToGroceryList(ingredient)
           // console.log('click')
         })
         
@@ -119,49 +128,60 @@ function produceDish(dish, e) {
       })
       divider.append(time,servingSize,ingredientsTitle)
     })
+
+    
     //-------------------------------------------
     let dividerSubsection = document.createElement("div")
     dividerSubsection.id = "dividerSub"
     //----------------------------------------------------- Likes
     let dishLikes = document.createElement("h4")
     dishLikes.textContent = dish.likes + " Likes";
-
+    //---------------------------------------------------------likes button
     let likeButton = document.createElement('button')
     likeButton.textContent = '🤢'
     likeButton.addEventListener('click', () => {
       dish.likes += 1
       dishLikes.textContent = dish.likes + " Likes"
     })
-    //-----------------------------------------------------------
-      // dishComments.textContent = dish.comments
+
+    let dishLikesDiv = document.createElement("div")
+    dishLikesDiv.className = "dishLikesDiv"
+
+    dishLikesDiv.append(dishLikes, likeButton)
+    //----------------------------------------------------------- initial comments
+    let commentsDiv = document.createElement('div')
+    commentsDiv.className = "commentsDiv"
     let listOfComments = document.createElement('ul')
     let dishComments = dish.comments
     dishComments.forEach((comment) => createComment(comment))
-    //-------------------------------------------------------------
+    //------------------------------------------------------------- comment generator subfunction
     function createComment(comment){
       let li = document.createElement('li')
       li.textContent = comment
       listOfComments.append(li)
     }
-    //-----------------------------------------------------------
+    //----------------------------------------------------------- creating comments form
     let dishCommentForm = document.createElement("form")
     let dishCommentFormInput = document.createElement("input")
+    dishCommentFormInput.name = "input"
     let dishCommentFormButton = document.createElement("button")
     dishCommentFormButton.textContent = "Comment"
 
-    // dishCommentForm.addEventListener('submit', (e) => {
-    //   e.preventDefault()
-    //   console.log(e.target.dishCommentFormInput.value)
-    // })
+    dishCommentForm.addEventListener('submit', function(e){
+      e.preventDefault()
+      createComment(e.target.input.value)
+    })
 
+    dishCommentForm.append(dishCommentFormInput, dishCommentFormButton)
+    commentsDiv.append(listOfComments, dishCommentForm)
 //------------------------------------------------------------
     let thisIsABreak = document.createElement('div')
     thisIsABreak.className = "space"
 
-    dividerSubsection.append(dishLikes, likeButton, dishCommentForm, listOfComments, dishCommentFormInput,dishCommentFormButton, thisIsABreak)
+    dividerSubsection.append(dishLikesDiv, commentsDiv)
     //----------------------------------------------
 
-    divider.append(dishName, img); //dishLikes moves to top after image dissapears
+    
     mealList.append(divider, dividerSubsection, thisIsABreak);
   }
 }

@@ -19,14 +19,14 @@ body {
     text-align: center;
 }
 .space {
-    margin: 13%;
+    margin: 9rem;
 }
 #recipes {
     text-align: center;
 }
 img {
-    width: 95%;
-    height: 85%;
+    width: 32rem;
+    height: 32rem;
 }
 #tab #list-button {
     visibility: hidden;
@@ -34,25 +34,26 @@ img {
 #divider {
     display: inline-block;
     text-align: center;
-   width: 40%;
-   text-align: center;
+   width: 35rem;
    background-color: white;
-   /* border: solid; */
-   height: 615px;
+   height: 38rem;
 }
 .cardback {
-    width: 85%;
+    width: 30rem;
     text-align: center;
     margin: auto;
 }
-
 #dividerSub {
+    /* background-color: white; */
+    width: 35rem;
     display: inline-block;
-    text-align: center;
-    width: 40%;
-    text-align: center;
-    background-color: white;
-    height: 13%;
+}
+.dishLikesDiv {
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    justify-content: space-between;
 }
 
 
@@ -66,16 +67,19 @@ img {
     }
     #tab #list-button {
         visibility: visible;
-    
-    }
-    #divider {
-        display: inline-block;
-        text-align: center;
-       width: 95%;
-       height: 400px;
     }
     img {
-        width: 90%;
-        height: 75%;
+        width: 19rem;
+        height: 19rem;
+    }
+    #divider {
+       width: 22rem;
+       height: 25rem;
+    }
+    .cardback {
+        width: 18rem;
+    }
+    #dividerSub {
+        width: 20rem;
     }
 }
