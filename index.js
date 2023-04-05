@@ -66,16 +66,30 @@ function produceDish(dish, e) {
     divider.id = "divider";
 
     let dividerSubsection = document.createElement("div")
+    dividerSubsection.id="dividerSub"
     let dishLikes = document.createElement("h4")
     dishLikes.textContent = dish.likes + " Likes";
+    dishLikes.id = "dishLikes"
+    let dishLikesButton = document.createElement("button")
+    dishLikesButton.textContent = "⭐"
+    dishLikesButton.id = "dishLikesButton"
+    let dishLikesDiv = document.createElement("div")
+    dishLikesDiv.className = "dishLikesDiv"
+
+    dishLikesDiv.append(dishLikes, dishLikesButton)
+
     let dishComments = document.createElement("h4")
     dishComments.textContent = dish.comments
     let dishCommentForm = document.createElement("form")
+    dishCommentForm.id = "commentForm"
     let dishCommentFormInput = document.createElement("input")
     let dishCommentFormButton = document.createElement("button")
     dishCommentFormButton.textContent = "Comment"
 
-    dividerSubsection.append(dishLikes, dishComments, dishCommentForm, dishCommentFormInput,dishCommentFormButton)
+    dishCommentForm.append(dishCommentFormInput, dishCommentFormButton)
+
+    dividerSubsection.append(dishLikesDiv, dishComments, dishCommentForm)
+    
 
     
     divider.addEventListener(('mouseenter'),() => {
