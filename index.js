@@ -61,11 +61,21 @@ function produceDish(dish, e) {
     dishName.textContent = dish.name;
     let img = document.createElement("img");
     img.src = dish.image;
-    let dishLikes = document.createElement("h4")
-    dishLikes.textContent = dish.likes + " Likes";
 
     let divider = document.createElement("div");
     divider.id = "divider";
+
+    let dividerSubsection = document.createElement("div")
+    let dishLikes = document.createElement("h4")
+    dishLikes.textContent = dish.likes + " Likes";
+    let dishComments = document.createElement("h4")
+    dishComments.textContent = dish.comments
+    let dishCommentForm = document.createElement("form")
+    let dishCommentFormInput = document.createElement("input")
+    let dishCommentFormButton = document.createElement("button")
+    dishCommentFormButton.textContent = "Comment"
+
+    dividerSubsection.append(dishLikes, dishComments, dishCommentForm, dishCommentFormInput,dishCommentFormButton)
 
     
     divider.addEventListener(('mouseenter'),() => {
@@ -122,7 +132,8 @@ function produceDish(dish, e) {
     thisIsABreak.className = "space"
 
     divider.append(dishName, img);
-    mealList.append(divider, thisIsABreak);
+    mealList.append(divider, dividerSubsection);
+    dividerSubsection.append(thisIsABreak)
 
 
 

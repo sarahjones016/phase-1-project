@@ -8,7 +8,7 @@ h1 {
 }
 body {
     background-color: #FFF2CC;
-    font-family: "Charter";
+    /* font-family: "Charter"; */
 }
 #tab {
     float: right;
