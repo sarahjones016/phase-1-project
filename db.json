@@ -41,7 +41,7 @@
         "type" : "Italian",
         "time" : 75,
         "likes" : 0,
-        "comments" : [],
+        "comments" : ["hi","was here first", "i'm hungry can someone buy me lunch"],
         "ingredients" : [
           "1 12-inch round of pizza dough, stretched",
           "3 tablespoons tomato sauce",
@@ -59,7 +59,7 @@
         "type" : "Mexican",
         "time" : 60,
         "likes" : 0,
-        "comments" : [],
+        "comments" : ["hi","was here first", "i'm hungry can someone buy me lunch"],
         "ingredients" : [
           "2 tablespoons unsalted butter",
           "4 tablespoons vegetable oil",
@@ -90,7 +90,7 @@
       "type" : "Mexican",
       "time" : 65,
       "likes" : 0,
-      "comments" : [],
+      "comments" : ["hi","was here first", "i'm hungry can someone buy me lunch"],
       "ingredients" : [
           "Fourteen 5 1/2-inch thin yellow corn tortillas",
           "Nonstick cooking spray",
@@ -119,7 +119,7 @@
       "type" : "Thai",
       "time" : 765,
       "likes" : 0,
-      "comments" : [],
+      "comments" : ["hi","was here first", "i'm hungry can someone buy me lunch"],
       "ingredients" : [
         "1-ounce tamarind paste",
         "3/4 cup boiling water",
@@ -149,7 +149,7 @@
       "type" : "Thai",
       "time" : 35,
       "likes" : 0,
-      "comments" : [],
+      "comments" : ["hi","was here first", "i'm hungry can someone buy me lunch"],
       "ingredients" : [
         "1 cup sticky rice (sweet glutenous rice)",
         "2/3 cup water",
@@ -173,7 +173,7 @@
       "type" : "American",
       "time" : 180,
       "likes" : 0,
-      "comments" : [],
+      "comments" : ["hi","was here first", "i'm hungry can someone buy me lunch"],
       "ingredients" : [
           "2 ounces dried chiles, such as guajillo, arbol, ancho, japones or a combination (8 to 10 chiles)",
           "1 1/2 teaspoons ground cumin",
@@ -202,7 +202,7 @@
       "type" : "American",
       "time" : 20,
       "likes" : 0,
-      "comments" : [],
+      "comments" : ["hi","was here first", "i'm hungry can someone buy me lunch"],
       "ingredients" : [
           "1 1/2 pounds ground chuck (80 percent lean) or ground turkey (90 percent lean)",
           "Kosher salt and freshly ground black pepper",
@@ -220,7 +220,7 @@
       "type" : "Chinese",
       "time" : 40,
       "likes" : 0,
-      "comments" : [],
+      "comments" : ["hi","was here first", "i'm hungry can someone buy me lunch"],
       "ingredients" : [
           "1 large egg, beaten",
           "1 1/4 pounds fatty ground pork",
@@ -249,7 +249,7 @@
       "type" : "Chinese",
       "time" : 220,
       "likes" : 0,
-      "comments" : [],
+      "comments" : ["hi","was here first", "i'm hungry can someone buy me lunch"],
       "ingredients" : [
           "2 cups (240 g) plus 2 tablespoons (18 g) bread flour, plus more for dusting",
           "1/2 cup (114 g) plus 1 tablespoon cold whole milk",
@@ -272,7 +272,7 @@
       "type" : "Indian",
       "time" : 80,
       "likes" : 0,
-      "comments" : [],
+      "comments" : ["hi","was here first", "i'm hungry can someone buy me lunch"],
       "ingredients" : [
           "2 large russet potatoes (about 1 1/4 pounds)",
           "Kosher salt",
@@ -292,7 +292,7 @@
       "type" : "Indian",
       "time" : 125,
       "likes" : 0,
-      "comments" : [],
+      "comments" : ["hi","was here first", "i'm hungry can someone buy me lunch"],
       "ingredients" : [
           "5 cloves",
           "2 dried guajillo chiles (if you can't find these, then use 2 chiles de arbol, and more paprika for color)",

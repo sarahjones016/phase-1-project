@@ -122,7 +122,7 @@ function produceDish(dish, e) {
     //-------------------------------------------
     let dividerSubsection = document.createElement("div")
     dividerSubsection.id = "dividerSub"
-    //-----------------------------------------------------
+    //----------------------------------------------------- Likes
     let dishLikes = document.createElement("h4")
     dishLikes.textContent = dish.likes + " Likes";
 
@@ -133,17 +133,32 @@ function produceDish(dish, e) {
       dishLikes.textContent = dish.likes + " Likes"
     })
     //-----------------------------------------------------------
-    let dishComments = document.createElement("h4")
-    dishComments.textContent = dish.comments
+      // dishComments.textContent = dish.comments
+    let listOfComments = document.createElement('ul')
+    let dishComments = dish.comments
+    dishComments.forEach((comment) => createComment(comment))
+    //-------------------------------------------------------------
+    function createComment(comment){
+      let li = document.createElement('li')
+      li.textContent = comment
+      listOfComments.append(li)
+    }
+    //-----------------------------------------------------------
     let dishCommentForm = document.createElement("form")
     let dishCommentFormInput = document.createElement("input")
     let dishCommentFormButton = document.createElement("button")
     dishCommentFormButton.textContent = "Comment"
 
+    // dishCommentForm.addEventListener('submit', (e) => {
+    //   e.preventDefault()
+    //   console.log(e.target.dishCommentFormInput.value)
+    // })
+
+//------------------------------------------------------------
     let thisIsABreak = document.createElement('div')
     thisIsABreak.className = "space"
 
-    dividerSubsection.append(dishLikes, likeButton, dishComments, dishCommentForm, dishCommentFormInput,dishCommentFormButton, thisIsABreak)
+    dividerSubsection.append(dishLikes, likeButton, dishCommentForm, listOfComments, dishCommentFormInput,dishCommentFormButton, thisIsABreak)
     //----------------------------------------------
 
     divider.append(dishName, img); //dishLikes moves to top after image dissapears
