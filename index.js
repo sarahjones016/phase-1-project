@@ -31,18 +31,17 @@ listForm.addEventListener("submit", function (e) {
   // const newItem = document.createElement("li");
   // newItem.textContent = e.target.item.value;
 
-function addToGroceryList(item){
+function addToGroceryList(item){ //for each item that gets thrown into grocery list
   let li = document.createElement("li");
   li.textContent = item;
   let deleteButton = document.createElement('button')
   deleteButton.textContent = '❌'
-  deleteButton.addEventListener('click', (e) => {
+  deleteButton.addEventListener('click', () => {
     li.remove()
   })
   li.append(deleteButton)
   listForm.append(li);
 }
-// Render Page
 
 function renderPage(dishes) {
   mealForm.addEventListener("submit", (e) => {
@@ -66,7 +65,6 @@ function resetForm() {
 //Mainfunction - creates list of dishes
 function produceDish(dish, e) {
   if (dish.type === e.target.cuisine.value) {
-
     
     let dishName = document.createElement("h2");
     dishName.textContent = dish.name;
@@ -106,12 +104,10 @@ function produceDish(dish, e) {
         ingredients.append(ingredientList)
 
         let addToListButton = document.createElement("button")
-        addToListButton.textContent = "+"
+        addToListButton.textContent = "✔"
 
         addToListButton.addEventListener('click', () => {
-
           addToGroceryList(ingredient)
-          // console.log('click')
         })
         
         ingredientList.append(addToListButton)
@@ -128,8 +124,6 @@ function produceDish(dish, e) {
       })
       divider.append(time,servingSize,ingredientsTitle)
     })
-
-    
     //-------------------------------------------
     let dividerSubsection = document.createElement("div")
     dividerSubsection.id = "dividerSub"
@@ -180,8 +174,6 @@ function produceDish(dish, e) {
 
     dividerSubsection.append(dishLikesDiv, commentsDiv)
     //----------------------------------------------
-
-    
     mealList.append(divider, dividerSubsection, thisIsABreak);
   }
 }
