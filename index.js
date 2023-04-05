@@ -61,14 +61,14 @@ function produceDish(dish, e) {
     dishName.textContent = dish.name;
     let img = document.createElement("img");
     img.src = dish.image;
-    let dishLikes = document.createElement("h4")
-    dishLikes.textContent = dish.likes
+    //----------------------------------------------------------------
 
+//----------------------------------------------------------
     let divider = document.createElement("div");
     divider.id = "divider";
 
+//--------------------------------------------------------------
     
-
     divider.addEventListener(('mouseenter'),() => {
       // console.log('enter')
       img.hidden = true
@@ -76,18 +76,19 @@ function produceDish(dish, e) {
       let time = document.createElement('h4')
       time.className = 'cardback'
       time.textContent = "Cook Time (in mins): " + dish.time
-
+//--------------------------------------------------------------
       let servingSize = document.createElement('h4')
       servingSize.className = 'cardback'
       servingSize.textContent = "Servings: " + dish.servings
-
+//------------------------------------------------------------
       let ingredientsTitle = document.createElement("p")
       ingredientsTitle.textContent = "Ingredients:"
       let ingredients = document.createElement('ul')
       ingredientsTitle.append(ingredients)
       ingredients.className = 'cardback'
-
-      for (let ingredient of dish.ingredients) {
+      
+//---------------------------------------------------ingredient maker
+      for (let ingredient of dish.ingredients) { 
         // console.log(ingredient)
 
         let ingredientList = document.createElement("li")
@@ -106,7 +107,7 @@ function produceDish(dish, e) {
         
         ingredientList.append(addToListButton)
       }
-      
+//-----------------------------------------------------
       divider.addEventListener(('mouseleave'), () => {
         // console.log('leave')
         divider.style = ' '
@@ -118,26 +119,34 @@ function produceDish(dish, e) {
       })
       divider.append(time,servingSize,ingredientsTitle)
     })
+    //-------------------------------------------
+    let dividerSubsection = document.createElement("div")
+    dividerSubsection.id = "dividerSub"
+    //-----------------------------------------------------
+    let dishLikes = document.createElement("h4")
+    dishLikes.textContent = dish.likes + " Likes";
+
+    let likeButton = document.createElement('button')
+    likeButton.textContent = '🤢'
+    likeButton.addEventListener('click', () => {
+      dish.likes += 1
+      dishLikes.textContent = dish.likes + " Likes"
+    })
+    //-----------------------------------------------------------
+    let dishComments = document.createElement("h4")
+    dishComments.textContent = dish.comments
+    let dishCommentForm = document.createElement("form")
+    let dishCommentFormInput = document.createElement("input")
+    let dishCommentFormButton = document.createElement("button")
+    dishCommentFormButton.textContent = "Comment"
 
     let thisIsABreak = document.createElement('div')
     thisIsABreak.className = "space"
 
-    let likesText = document.createElement('p')
-    likesText.textContent =  `${dish.likes} likes`
-    let count = 0
+    dividerSubsection.append(dishLikes, likeButton, dishComments, dishCommentForm, dishCommentFormInput,dishCommentFormButton, thisIsABreak)
+    //----------------------------------------------
 
-    let likes = document.createElement('button')
-    likes.textContent = '🤢'
-    likes.addEventListener(('click'), () => {
-      count++
-    })
-    dish.likes = count + dish.likes
-    likesText.textContent = `${dish.likes} likes`
-
-    divider.append(dishName, img);
-    mealList.append(divider, likesText, likes, thisIsABreak);
-
-
-
+    divider.append(dishName, img); //dishLikes moves to top after image dissapears
+    mealList.append(divider, dividerSubsection, thisIsABreak);
   }
 }

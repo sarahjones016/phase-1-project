@@ -7,7 +7,7 @@
       "type" : "Italian",
       "time" : 90,
       "likes" : 0,
-      "comments" : [],
+      "comments" : ["hi","was here first", "i'm hungry can someone buy me lunch"],
       "ingredients" : [
         "Extra-virgin olive oil",
         "1 onion, chopped",
@@ -215,7 +215,7 @@
   },
   {
       "id" : 9,
-      "name" : "Pan-Fried Pork and Chive Dumplings with Chile Crisp",
+      "name" : "Pan-Fried Pork and Chive Dumplings",
       "image" : "https://christieathome.com/wp-content/uploads/2020/04/Pork-Chive-Dumplings-updated-1-b.jpg",
       "type" : "Chinese",
       "time" : 40,

@@ -8,7 +8,7 @@ h1 {
 }
 body {
     background-color: #FFF2CC;
-    font-family: "Charter";
+    /* font-family: "Charter"; */
 }
 #tab {
     float: right;
@@ -19,16 +19,14 @@ body {
     text-align: center;
 }
 .space {
-    margin-top: 75px;
-    margin-bottom: 50px;
+    margin: 13%;
 }
 #recipes {
     text-align: center;
 }
 img {
-    /* border:solid; */
-    width: 550px;
-    height: 550px;
+    width: 95%;
+    height: 85%;
 }
 #tab #list-button {
     visibility: hidden;
@@ -36,46 +34,48 @@ img {
 #divider {
     display: inline-block;
     text-align: center;
-   width: 550px;
+   width: 40%;
    text-align: center;
    background-color: white;
    /* border: solid; */
    height: 615px;
 }
 .cardback {
-    width: 475px;
+    width: 85%;
     text-align: center;
     margin: auto;
 }
 
+#dividerSub {
+    display: inline-block;
+    text-align: center;
+    width: 40%;
+    text-align: center;
+    background-color: white;
+    height: 13%;
+}
+
 
 @media all and (max-width: 480px) {
-    h1 {
-        text-align: center;
-        font-size: 53px;
-    }
     #tab {
         float: none;
         border: 1px solid #FFF2CC;
         background-color: white;
         width: 100%;
         height: 150px;
-        text-align: center;
-    }
-    img {
-        width: 300px;
-        height: 300px;
     }
     #tab #list-button {
         visibility: visible;
     
     }
-    .space {
-        margin-top: 100px;
-        margin-bottom: 100px;
+    #divider {
+        display: inline-block;
+        text-align: center;
+       width: 95%;
+       height: 400px;
     }
-    .mobileSpace {
-        margin-top: 100px;
-        margin-bottom: 150px;
+    img {
+        width: 90%;
+        height: 75%;
     }
 }
