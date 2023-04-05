@@ -25,14 +25,23 @@ listButton.addEventListener("click", function () {
 //Add To Grocery List Form
 listForm.addEventListener("submit", function (e) {
   e.preventDefault();
-  const newItem = document.createElement("li");
-  newItem.textContent = e.target.item.value;
-  listForm.append(newItem);
+  addToGroceryList(e.target.item.value);
   listForm.reset();
 });
 
-// Render Page
+function addToGroceryList(item){
+  let li = document.createElement("li");
+  li.textContent = item;
+  let deleteButton = document.createElement('button')
+  deleteButton.textContent = '❌'
+  deleteButton.addEventListener('click', (e) => {
+    li.remove()
+  })
+  li.append(deleteButton)
+  listForm.append(li);
+}
 
+// Render Page
 function renderPage(dishes) {
   mealForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -100,24 +109,24 @@ function produceDish(dish, e) {
     let dishCommentForm = document.createElement("form")
     dishCommentForm.id = "commentForm"
     let dishCommentFormInput = document.createElement("input")
+    dishCommentFormInput.name = "comment"
     let dishCommentFormButton = document.createElement("button")
     dishCommentFormButton.textContent = "Comment"
 
     dishCommentForm.addEventListener("submit", function(e) {
       e.preventDefault();
-      console.log("submit button clicked")
-    })
+      console.log(e.target.comment.value)
 
+      createComment(e.target.comment.value)
+    })
 
     dishCommentForm.append(dishCommentFormInput, dishCommentFormButton)
     commentsDiv.append(listOfComments, dishCommentForm)
 
     dividerSubsection.append(dishLikesDiv, commentsDiv)
     
-
-    
+    //Card Hover
     divider.addEventListener(('mouseenter'),() => {
-      // console.log('enter')
       img.hidden = true
       divider.style = "overflow-y:auto"
       let time = document.createElement('h4')
@@ -135,7 +144,6 @@ function produceDish(dish, e) {
       ingredients.className = 'cardback'
 
       for (let ingredient of dish.ingredients) {
-        // console.log(ingredient)
 
         let ingredientList = document.createElement("li")
         ingredientList.textContent = ingredient
@@ -145,17 +153,13 @@ function produceDish(dish, e) {
         addToListButton.textContent = "+"
 
         addToListButton.addEventListener('click', () => {
-          let newItem = document.createElement("li");
-          newItem.textContent = ingredient;
-          listForm.append(newItem);
-          // console.log('click')
+          addToGroceryList(ingredient)
         })
         
         ingredientList.append(addToListButton)
       }
       
       divider.addEventListener(('mouseleave'), () => {
-        // console.log('leave')
         divider.style = ' '
         img.hidden = false
         ingredients.hidden = true
@@ -172,8 +176,5 @@ function produceDish(dish, e) {
     divider.append(dishName, img);
     mealList.append(divider, dividerSubsection);
     dividerSubsection.append(thisIsABreak)
-
-
-
   }
 }
