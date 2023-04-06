@@ -7,6 +7,9 @@ h1 {
 h2 {
     font-family: "Acme";
 }
+a {
+    color: black;
+}
 #mealForm {
     text-align: center;
     font-size: 18px;

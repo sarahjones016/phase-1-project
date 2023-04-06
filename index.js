@@ -67,7 +67,11 @@ function produceDish(dish, e) {
   if (dish.type === e.target.cuisine.value) {
     
     let dishName = document.createElement("h2");
-    dishName.textContent = dish.name;
+    let dishLink = document.createElement('a')
+    dishLink.href = dish.link
+    dishLink.textContent = dish.name
+    dishName.append(dishLink)
+    // dishName.textContent = dish.name;
     let img = document.createElement("img");
     img.src = dish.image;
 //----------------------------------------------------------
@@ -136,12 +140,28 @@ function produceDish(dish, e) {
     likeButton.addEventListener('click', () => {
       dish.likes += 1
       dishLikes.textContent = dish.likes + " Likes"
+
+      likesObj = {
+        likes: dish.likes
+      }
+  //------------------------------------------------------------------------likes patch
+      fetch(`http://localhost:3000/dishes/${dish.id}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(likesObj)
+      })
+      .then(res => res.json())
+      //------------------------------------------------------
     })
 
     let dishLikesDiv = document.createElement("div")
     dishLikesDiv.className = "dishLikesDiv"
 
     dishLikesDiv.append(dishLikes, likeButton)
+    //---------------------------------------------------------------------
+    
     //----------------------------------------------------------- initial comments
     let commentsDiv = document.createElement('div')
     commentsDiv.className = "commentsDiv"
@@ -164,6 +184,23 @@ function produceDish(dish, e) {
     dishCommentForm.addEventListener('submit', function(e){
       e.preventDefault()
       createComment(e.target.input.value)
+      
+      //----------------------------------------------patch comments
+      let arr = dish.comments
+      arr.push(e.target.input.value)
+
+      commentObj = {
+        comments: arr
+      }
+      fetch(`http://localhost:3000/dishes/${dish.id}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(commentObj)
+      })
+      .then(res => res.json())
+      // .then(createComment(e.target.input.value))
     })
 
     dishCommentForm.append(dishCommentFormInput, dishCommentFormButton)
