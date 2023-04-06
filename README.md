@@ -7,3 +7,5 @@ The meals in the "Meals" section populate based on the cuisine type that was ent
 Grocery List:
 The grocery list populates ingredients, based on which ingredients the user has added from the meal cards. The grocery list also contains a form: This allows users to manually input ingredients that were not included in the recipe ingredients. Each ingredient has a "delete button," should the user no longer need to purchase this ingredient.
 
+Gif: http://g.recordit.co/5ddKhEAHX1.gif 
+

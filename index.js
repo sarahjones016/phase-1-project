@@ -6,7 +6,7 @@ const listForm = document.getElementById("listForm");
 const mealList = document.getElementById("mealList");
 const baseUrl = "http://localhost:3000/dishes"
 
-fetch("http://localhost:3000/dishes")
+fetch(baseUrl)
   .then((res) => {
     return res.json();
   })
