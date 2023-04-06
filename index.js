@@ -136,8 +136,11 @@ function produceDish(dish, e) {
       e.preventDefault();
       
 //PATCH Comments
+
+      let arr = dish.comments
+      arr.push(e.target.comment.value)
       commentObj = {
-        comments: e.target.comment.value
+        comments: arr
       }
       
       fetch(`${baseUrl}/${dish.id}`, {
