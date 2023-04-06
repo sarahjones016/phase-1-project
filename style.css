@@ -1,6 +1,11 @@
 h1 {
     text-align: center;
-    font-size: 60px;
+    font-size: 105px;
+    font-family: "Acme";
+    margin-top: 2.5%;
+}
+h2 {
+    font-family: "Acme";
 }
 #mealForm {
     text-align: center;
@@ -8,14 +13,14 @@ h1 {
 }
 body {
     background-color: #FFF2CC;
-    /* font-family: "Charter"; */
+    font-family: "Avenir Next Condensed";
 }
 #tab {
     float: right;
     border: 1px solid #FFF2CC;
     background-color: white;
     width: 22%;
-    height: 4000px;
+    height: 2500px;
     text-align: center;
 }
 .space {
@@ -37,6 +42,8 @@ img {
    width: 35rem;
    background-color: white;
    height: 38rem;
+   margin-left: 15rem;
+   margin-right: 15rem;
 }
 .cardback {
     width: 30rem;
@@ -75,11 +82,17 @@ img {
     #divider {
        width: 22rem;
        height: 25rem;
+       margin-left: 0rem;
+       margin-right: 0rem;
     }
     .cardback {
         width: 18rem;
     }
     #dividerSub {
         width: 20rem;
+    }
+    h1 {
+        font-size: 80px;
+        margin-top: 20%;
     }
 }

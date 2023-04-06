@@ -10,21 +10,23 @@
 </head>
 <body>
     
+    <section id="tab-section">
+        <div id="tab" style="overflow-y:auto">
+            <h2>Your Grocery List</h2>
+            <form id="listForm">
+                <input
+                type="text"
+                name="item"
+                id="item"
+                placeholder="Add an additional item..."
+                />
+              <button class="addButton" type="submit">Add Item</button>
+            </form>
+            <br>
+            <button id="list-button">⌄</button>
+        </div>
+    </section>
     <section id="form-section">
-    <div id="tab" style="overflow-y:auto">
-        <h2>Your Grocery List</h2>
-        <form id="listForm">
-            <input
-            type="text"
-            name="item"
-            id="item"
-            placeholder="Add an additional item..."
-            />
-          <button class="addButton" type="submit">Add Item</button>
-        </form>
-        <br>
-        <button id="list-button">⌄</button>
-    </div>
     <div class="mobileSpace"></div>
     <h1 id="header-1">Meal Selector</h1>
     <form id="mealForm">
