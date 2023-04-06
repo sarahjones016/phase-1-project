@@ -4,6 +4,7 @@ const tab = document.getElementById("tab");
 const mealForm = document.getElementById("mealForm");
 const listForm = document.getElementById("listForm");
 const mealList = document.getElementById("mealList");
+const baseUrl = "http://localhost:3000/dishes"
 
 fetch("http://localhost:3000/dishes")
   .then((res) => {
@@ -67,7 +68,10 @@ function produceDish(dish, e) {
 
     
     let dishName = document.createElement("h2");
-    dishName.textContent = dish.name;
+    let dishLink = document.createElement("a");
+    dishLink.href = dish.link
+    dishLink.textContent = dish.name
+    dishName.append(dishLink)
     let img = document.createElement("img");
     img.src = dish.image;
 
@@ -85,8 +89,23 @@ function produceDish(dish, e) {
     dishLikesDiv.className = "dishLikesDiv"
 
     dishLikesButton.addEventListener("click", function() {
-      dish.likes += 1
+      dish.likes ++
       dishLikes.textContent =  dish.likes + " Likes";
+
+
+//PATCH Likes
+      likesObj = {
+        likes: dish.likes
+      }
+
+      fetch(`${baseUrl}/${dish.id}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(likesObj)
+    })
+    .then(res => res.json())
     })
 
     dishLikesDiv.append(dishLikes, dishLikesButton)
@@ -115,9 +134,22 @@ function produceDish(dish, e) {
 
     dishCommentForm.addEventListener("submit", function(e) {
       e.preventDefault();
-      console.log(e.target.comment.value)
+      
+//PATCH Comments
+      commentObj = {
+        comments: e.target.comment.value
+      }
+      
+      fetch(`${baseUrl}/${dish.id}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(commentObj)
+    })
+    .then(res => res.json())
+    .then(createComment(e.target.comment.value))
 
-      createComment(e.target.comment.value)
     })
 
     dishCommentForm.append(dishCommentFormInput, dishCommentFormButton)
